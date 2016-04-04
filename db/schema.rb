@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404174144) do
+ActiveRecord::Schema.define(version: 20160404201946) do
+
+  create_table "chess_games", force: :cascade do |t|
+    t.string   "gameType"
+    t.integer  "playerWhiteId"
+    t.integer  "playerBlackId"
+    t.string   "accessCode"
+    t.boolean  "publicMatch"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "chess_pieces", force: :cascade do |t|
+    t.string   "pieceType"
+    t.binary   "pieceImage"
+    t.integer  "initialRow"
+    t.string   "initialCol"
+    t.string   "integer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.integer  "playerId1"
+    t.integer  "playerId2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_saves", force: :cascade do |t|
+    t.integer  "gameId"
+    t.integer  "playerId"
+    t.integer  "pieceId"
+    t.integer  "row"
+    t.integer  "col"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "installs", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +67,21 @@ ActiveRecord::Schema.define(version: 20160404174144) do
 
   add_index "installs", ["email"], name: "index_installs_on_email", unique: true
   add_index "installs", ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true
+
+  create_table "players", force: :cascade do |t|
+    t.string   "name"
+    t.binary   "profileImage"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "statistics", force: :cascade do |t|
+    t.integer  "wins"
+    t.integer  "loses"
+    t.integer  "playerId"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
