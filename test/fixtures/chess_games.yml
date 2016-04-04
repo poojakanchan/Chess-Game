@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gameType: MyString
+  playerWhiteId: 1
+  playerBlackId: 1
+  accessCode: MyString
+  publicMatch: false
+
+two:
+  gameType: MyString
+  playerWhiteId: 1
+  playerBlackId: 1
+  accessCode: MyString
+  publicMatch: false

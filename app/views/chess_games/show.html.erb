@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gametype:</strong>
+  <%= @chess_game.gameType %>
+</p>
+
+<p>
+  <strong>Playerwhiteid:</strong>
+  <%= @chess_game.playerWhiteId %>
+</p>
+
+<p>
+  <strong>Playerblackid:</strong>
+  <%= @chess_game.playerBlackId %>
+</p>
+
+<p>
+  <strong>Accesscode:</strong>
+  <%= @chess_game.accessCode %>
+</p>
+
+<p>
+  <strong>Publicmatch:</strong>
+  <%= @chess_game.publicMatch %>
+</p>
+
+<%= link_to 'Edit', edit_chess_game_path(@chess_game) %> |
+<%= link_to 'Back', chess_games_path %>

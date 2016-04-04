@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pieceType: MyString
+  pieceImage: 
+  initialRow: 1
+  initialCol: MyString
+  integer: MyString
+
+two:
+  pieceType: MyString
+  pieceImage: 
+  initialRow: 1
+  initialCol: MyString
+  integer: MyString
