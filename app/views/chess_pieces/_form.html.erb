@@ -1,0 +1,33 @@
+<%= form_for(@chess_piece) do |f| %>
+  <% if @chess_piece.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chess_piece.errors.count, "error") %> prohibited this chess_piece from being saved:</h2>
+
+      <ul>
+      <% @chess_piece.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pieceType %><br>
+    <%= f.text_field :pieceType %>
+  </div>
+  <div class="field">
+    <%= f.label :pieceImage %><br>
+    <%= f.text_field :pieceImage %>
+  </div>
+  <div class="field">
+    <%= f.label :initialRow %><br>
+    <%= f.number_field :initialRow %>
+  </div>
+  <div class="field">
+    <%= f.label :initialCol %><br>
+    <%= f.number_field :initialCol %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

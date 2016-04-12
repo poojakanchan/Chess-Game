@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chess Pieces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Piecetype</th>
+      <th>Pieceimage</th>
+      <th>Initialrow</th>
+      <th>Initialcol</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chess_pieces.each do |chess_piece| %>
+      <tr>
+        <td><%= chess_piece.pieceType %></td>
+        <td><%= chess_piece.pieceImage %></td>
+        <td><%= chess_piece.initialRow %></td>
+        <td><%= chess_piece.initialCol %></td>
+        <td><%= link_to 'Show', chess_piece %></td>
+        <td><%= link_to 'Edit', edit_chess_piece_path(chess_piece) %></td>
+        <td><%= link_to 'Destroy', chess_piece, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chess piece', new_chess_piece_path %>
