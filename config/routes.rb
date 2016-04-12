@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
-  resources :friends
-  resources :chess_games
-  resources :statistics
-  resources :players
-  resources :game_saves
-  resources :chess_pieces
   devise_for :users
-  devise_for :views
-  devise_for :installs
+#  devise_for :views
+#  devise_for :installs
   get 'home/hello'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
